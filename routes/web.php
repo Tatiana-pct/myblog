@@ -1,5 +1,7 @@
 <?php
 
+
+use App\Http\Controllers\ArticleController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,10 +15,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('articles', ArticleController::class);
 
-Route::get('/test', function () {
-    return view('test');
-});
+
+
 
 
 
