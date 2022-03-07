@@ -7,10 +7,22 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
                     <a class="nav-link " aria-current="page" href="#">Link</a>
                 </li>
+            </ul>
+            <ul class="navbar-nav m-lg-auto">
+                @if(Auth::user())
+                    <li class="nav-item active">
+                        <a class="nav-link " aria-current="page" href="#">Déconnexion</a>
+                    </li>
+                @else
+                    <li class="nav-item active">
+                        <a class="nav-link " aria-current="page" href="#">Me connecter</a>
+                    </li>
+                @endif
+
             </ul>
         </div>
     </div>

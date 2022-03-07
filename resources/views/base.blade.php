@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}" >
 
 
-    <title>Hello, world!</title>
+    <title>My blog!</title>
 </head>
 <body>
 @include('incs.navbar')
