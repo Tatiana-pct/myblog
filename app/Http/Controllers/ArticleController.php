@@ -3,11 +3,19 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
+use App\Manager\ArticleManager;
 use App\Models\Article;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    private $articleManager;
+
+    public function __construct(ArticleManager $articleManager)
+    {
+        $this->articleManager = $articleManager;
+
+    }
     /**
      * Display a listing of the resource.
      *
@@ -41,11 +49,7 @@ class ArticleController extends Controller
     {
         $validated = $request->validated();
 
-        Article::create([
-            'title'=>$request->input('title'),
-            'subtitle'=>$request->input('subtitle'),
-            'content'=>$request->input('content')
-        ]);
+        $this->articleManager->build(new Article(),$request);
         return redirect()->route('articles.index')->with('success', "l'article a bien été sauvegaré !");
     }
 
@@ -72,12 +76,7 @@ class ArticleController extends Controller
      */
     public function update(Request $request, Article $article)
     {
-            $article->title=$request->input('title');
-            $article->subtitle=$request->input('subtitle');
-            $article->content=$request->input('content');
-            $article->save();
-
-
+        $this->articleManager->build($article, $request);
         return redirect()->route('articles.index')->with('warning', "l'article a bien été modifié!");
     }
 
