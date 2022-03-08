@@ -39,14 +39,14 @@ class ArticleController extends Controller
      */
     public function store(ArticleRequest $request)
     {
-        $validated = $request->valideted();
+        $validated = $request->validated();
 
         Article::create([
             'title'=>$request->input('title'),
             'subtitle'=>$request->input('subtitle'),
             'content'=>$request->input('content')
         ]);
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')->with('success', "l'article a bien été sauvegaré !");
     }
 
     /**
@@ -89,8 +89,9 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Article $article)
     {
-        //
+        $article->delete();
+        return redirect()->route('articles.index')->with('success',"L'article a bien été suppirmé !");
     }
 }
