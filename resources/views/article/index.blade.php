@@ -26,7 +26,7 @@
                    <a href="{{route('articles.edit',$article->id)}}" class="btn btn-warning mx-2">Editer</a>
 
                     <button type="button" class="btn btn-danger mx-2" onclick="document.getElementById('modal-open-{{$article->id}}').style.display='block'">Supprimer</button>
-                    <form action="{{route('articles.delete', $article->id)}}" method="POST">
+                    <form action="{{route('articles.destroy', $article->id)}}" method="POST">
                         @csrf
                         @method("DELETE")
                         <div class="modal" id="modal-open-{{$article->id}}">
