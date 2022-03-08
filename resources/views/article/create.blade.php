@@ -9,7 +9,7 @@
             <div class="col-12">
                 <div class="form-group">
                     <label>Titre :</label>
-                    <input type="text" name="title" class="form-control" placeholder="Titre de votre article">
+                    <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Titre de votre article">
                 @error('title')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{$message}}</strong>
@@ -23,9 +23,10 @@
             <div class="col-12">
                 <div class="form-group mt-4">
                     <label>Sous-titre :</label>
-                    <input type="text" name="subtitle" class="form-control" placeholder="sous titre de votre article">
+                    <input type="text" name="subtitle" class="form-control @error('subtitle') is-invalid @enderror" "placeholder="sous titre de votre article">
                     <small class="form-text text-muted"> Décrivez le contenue de votre article, le theme traité</small>
                     @error('subtitle')
+                    <br>
                     <span class="invalid-feedback" role="alert">
                         <strong>{{$message}}</strong>
                     </span>
@@ -38,7 +39,7 @@
             <div class="col-12">
                 <div class="form-group mt-4">
                     <label>contenu :</label>
-                    <textarea id="tinymce-editor" name="content" class="form-control w-100"  ></textarea>
+                    <textarea id="tinymce-editor" name="content" class="form-control w-100 @error('content') is-invalid @enderror"  ></textarea>
                     @error('content')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{$message}}</strong>
