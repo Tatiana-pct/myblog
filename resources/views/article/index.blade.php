@@ -17,10 +17,10 @@
             <tr class="table-primary">
                 <th scope="row">{{$article->id}}</th>
                 <td>{{$article->title}}</td>
-                <td>{{$article->created_at}}</td>
+                <td>{{$article->dateFormatted()}}</td>
                 <td class="d-flex">
-                   <a href="#" class="btn btn-warning mx-3">Editer</a>
-                    <a href="#" class="btn btn-danger mx-3">Supprimer</a>
+                   <a href="#" class="btn btn-warning mx-2">Editer</a>
+                    <a href="#" class="btn btn-danger mx-2">Supprimer</a>
                 </td>
             </tr>
         @endforeach
