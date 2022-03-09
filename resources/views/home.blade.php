@@ -8,8 +8,8 @@
            <hr class="my-4">
            <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
            <a class="btn btn-primary btn-lg" href="#" role="button">
-               Learn more <i class="fas fa-arrow-right m-2"></i></a>
-
+               Learn more <i class="fas fa-arrow-right m-2"></i>
+           </a>
 
        </div>
 
