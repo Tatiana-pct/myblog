@@ -2,6 +2,7 @@
 
 @section('content')
     <div class="jumbotron">
+
         <h2 class="display-4 text-center"> {{$article->title}}</h2>
         <div class="d-flex justify-content-center my-5">
             <a href="{{route('articles')}}" class="btn btn-primary">
@@ -10,6 +11,9 @@
             </a>
         </div>
         <h5 class="text-center my-3 pt-3">{{$article->subtitle}} </h5>
+        <div class="d-flex justify-content-center mb-3">
+        <span class="badge rounded-pill bg-primary ">{{$article->category->label}}</span>
+        </div>
     </div>
     <div class="container">
         <p class="text-center">

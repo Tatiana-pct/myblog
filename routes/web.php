@@ -25,7 +25,7 @@ Auth::routes();
 
 Route::prefix('admin')->middleware('admin')->group(function (){
 
-    Route::resource('articles', ArticleController::class)->except([
+Route::resource('articles', ArticleController::class)->except([
         'show'
     ]);
 });

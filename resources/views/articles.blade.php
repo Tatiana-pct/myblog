@@ -10,6 +10,9 @@
                        <div class="card my-3"></div>
                        <h5 class="card-title">{{$article->title}}</h5>
                        <p class="card-text">{{$article->subtitle}}</p>
+
+                           <span class="badge rounded-pill bg-primary mb-2">{{$article->category->label}}</span>
+                       <br>
                        <a href="{{route('article', $article->slug)}}" class="btn btn-primary">
                            Lire la suite...
                            <i class="fas fa-arrow-right "></i>
