@@ -35,6 +35,19 @@
             </div>
             {{--end title--}}
 
+            {{-- select--}}
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="category"> Categories</label>
+                    <select name="category"class="form-control">
+                        @foreach($categories  as $category)
+                            <option value="{{$category->id}}">{{$category->label}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            {{--end select--}}
+
             {{--text area--}}
             <div class="col-12">
                 <div class="form-group mt-4">

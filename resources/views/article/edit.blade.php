@@ -34,7 +34,20 @@
                     @enderror
                 </div>
             </div>
-            {{--end title--}}
+            {{--end subtitle--}}
+
+            {{-- select--}}
+            <div class="col-12">
+                <div class="form-group">
+                    <label for="category"> Categories</label>
+                    <select name="category"class="form-control">
+                        @foreach($categories  as $category)
+                            <option value="{{$category->id}}" {{$category->id === $article->category->id ? 'selected' : ''}}>{{$category->label}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            {{--end select--}}
 
             {{--text area--}}
             <div class="col-12">

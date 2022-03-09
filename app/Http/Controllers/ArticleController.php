@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
 use App\Manager\ArticleManager;
-use App\Models\Article;
+
+use App\Models\Category;
 use Illuminate\Http\Request;
+use App\Models\Article;
 
 class ArticleController extends Controller
 {
@@ -36,7 +38,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('article.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -63,7 +67,8 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         return view('article.edit',[
-            'article'=> $article
+            'article'=> $article,
+            'categories' => Category::all()
         ]);
     }
 
@@ -74,7 +79,7 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Article $article)
+    public function update(ArticleRequest $request, Article $article)
     {
         $this->articleManager->build($article, $request);
         return redirect()->route('articles.index')->with('warning', "l'article a bien été modifié!");
