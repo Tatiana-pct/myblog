@@ -13,6 +13,7 @@
                     <a class="nav-link " href="{{route('articles')}}">Articles</a>
                 </li>
             </ul>
+
             <ul class="navbar-nav m-lg-auto">
                 @if(Auth::user())
                     @if(Auth::user()->role === 'ADMIN' )
