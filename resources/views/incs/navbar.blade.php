@@ -18,7 +18,7 @@
                 @if(Auth::user())
                     @if(Auth::user()->role === 'ADMIN' )
                         <li class="nav-item">
-                            <a class="nav-link "  href="{{route('articles.index')}}">Espace admin</a>
+                            <a class="nav-link "  href="{{route('articles.index')}}">Espace  admin</a>
                         </li>
                     @endif
                     <li class="nav-item">

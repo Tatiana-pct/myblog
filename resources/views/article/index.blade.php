@@ -11,9 +11,9 @@
         <thead>
         <tr class="table-active">
             <th scope="col">ID</th>
-            <th scope="col">Title</th>
+            <th scope="col">Titre</th>
             <th scope="col">Créé le : </th>
-            <th scope="col">Action</th>
+            <th scope="col">Actions</th>
         </tr>
         </thead>
         <tbody>
